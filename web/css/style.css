@@ -1,0 +1,121 @@
+body{
+    background-color: #424040;
+}
+body, h1, h2, h3, h4, p, a {
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+.tablee{
+    position: center;
+    text-align: center;
+
+    border: 3px solid rgba(250, 50, 50, .4);
+}
+#longY{
+    text-align: center;
+    width: 230px;
+}
+#tbR {
+    text-align: center;
+    width: 230px;
+}
+#tbX {
+    text-align: center;
+    width: 230px;
+}
+#table_out{
+    text-align: center; font-size: 18px;  font-family: 'Arial'; color: blanchedalmond;
+}
+
+.content {
+    //background-color: #dcdada;
+    background-color: rgba(187, 184, 184, 0.5);
+    max-width: 790px;
+    margin: 0 auto 0;
+    color: black;
+    font-family: "Arial";
+    font-size: 10px;
+}
+.htmgraf{
+    margin-left: 50px;
+    margin-top: 50px;
+
+}
+.textx{
+    font-size: 12px;
+    color: black;
+    font-family: Arial;
+}
+.card{
+    border-radius: 30px;
+    float: left;
+    width: 350px;
+    height: 350px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 0.5);
+   // box-shadow: 4px 4px 5px rgb(213, 250, 50);
+    transition: opacity 0.6s;
+
+
+}
+
+.card:hover{
+
+    transition: opacity 2s;
+    box-shadow: 4px 4px 5px rgba(241, 7, 81,0.2);
+}
+
+.graphic{
+
+    background-color: #4a4848;
+
+}
+
+.input-pole {
+
+    font-size: 10px;
+    font-family: "Arial";
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+}
+
+*.Y_coordinate input {
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 20px;
+    box-shadow: 4px 4px 5px rgba(250, 50, 50, .4);
+    border-radius: 5px;
+    background-color:  #4a4848;
+    color: white;
+}
+.table-data{
+    width: 750px;
+    margin-top: 0px;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+.check-box{
+    margin-left: 20px;
+    margin-top: 5px;
+    color: aliceblue;
+    font-size: 12px;
+
+}
+.check-box:hover{
+
+    opacity: 0.5;
+    transition: opacity 0.6s;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 0.5);
+}
+
+.button:hover{
+    opacity: 0.5;
+    transition: opacity 0.6s;
+    background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+}
