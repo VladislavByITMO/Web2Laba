@@ -1,25 +1,25 @@
 package model;
 
-import point.Dot;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class Model {
 
-    public static ArrayList<Dot> Dots= new ArrayList<>();
+    List<Dot> dots;
 
-    public void setDot(Dot dot){
-        Dots.add(dot);
+
+    public List<Dot> getDotsList() {
+        return dots;
     }
 
-    public ArrayList<Dot> getDots() {
-        return Dots;
-    }
-    public String DrawDot(){
-        if(!Dots.isEmpty()){
-           Dot dot = Dots.get(Dots.size()-1);
 
-        }
-        return "sdf";
+    public void addDot(Dot dot) {
+        this.dots.add( dot);
     }
+
+
+    public Model() {
+        dots = new ArrayList<>();
+    }
+
 }

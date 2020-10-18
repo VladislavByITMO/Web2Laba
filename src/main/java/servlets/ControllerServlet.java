@@ -2,6 +2,7 @@ package servlets;
 
 import model.Model;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,9 +15,16 @@ import java.io.PrintWriter;
 @WebServlet("/")
 public class ControllerServlet extends HttpServlet {
 
+    private Model model;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
+
+        this.model = (Model)req.getServletContext().getAttribute("dots");
+        if(model==null){
+            model = new Model();
+        }
 
         try {
 
@@ -33,7 +41,8 @@ public class ControllerServlet extends HttpServlet {
 
         } catch (Exception e) {
             PrintWriter writer = resp.getWriter();
-            writer.write("Server wanna cry: " + e.toString());
+            e.printStackTrace();
+            writer.write("Server wanna cry: " + e.toString() );
             writer.close();
         }
     }

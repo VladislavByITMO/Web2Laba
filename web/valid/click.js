@@ -9,6 +9,8 @@ document.getElementById("R_field")
         r = inputR.value;
     })
 document.getElementById("graphic").onclick = function(event) {
+    check_R();
+    r = inputR.value;
     const rect = document.getElementById("graphic").getBoundingClientRect();
     var cordX;
     var cordY;

@@ -1,4 +1,4 @@
-package point;
+package model;
 
 public class Dot {
     public Double x;

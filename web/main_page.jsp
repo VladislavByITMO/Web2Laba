@@ -1,4 +1,6 @@
-<%@ page import="model.Model" %><%--
+<%@ page import="model.Model" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Dot" %><%--
   Created by IntelliJ IDEA.
   User: Taras
   Date: 29.09.2020
@@ -31,7 +33,9 @@
 
         <div class="graphic card">
             <p style="visibility: hidden">maybee grafic is here</p>
+
             <%@ include file="graficc.html" %>
+
             <circle id="point" r="3" cx="125" cy="125" fill="white" stroke="#641AD5" visibility="visible"/>
             <jsp:include page="table.jsp" />
             </svg>
@@ -87,9 +91,13 @@
                 <tbody id="table_out">
                 <ul>
                     <%
-                        if (!Model.Dots.isEmpty()) {
-                            for (int i = Model.Dots.size()-1; i >= 0; i--) {
-                                out.println(Model.Dots.get(i).toString());
+                        Model model = (Model) request.getServletContext().getAttribute("dots");
+                        if (!(model == null)){
+                            ArrayList<Dot> dots = (ArrayList<Dot>) model.getDotsList();
+                            if (!dots.isEmpty()) {
+                                for (int i = dots.size()-1; i >= 0; i--) {
+                                    out.println(dots.get(i).toString());
+                                }
                             }
                         }
                     %>

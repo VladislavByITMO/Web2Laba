@@ -6,11 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="point.Dot" %>
+<%@ page import="model.Dot" %>
 <%@ page import="model.Model" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<% Model model = new Model();%>
-<% if (!Model.Dots.isEmpty()) {  Dot dot = Model.Dots.get(Model.Dots.size()-1); %>
+<% Dot dot;%>
+<%
+    Model model = (Model) request.getServletContext().getAttribute("dots");
+    if (!(model == null)){
+        ArrayList<Dot> dots = (ArrayList<Dot>) model.getDotsList();
+        if (!dots.isEmpty()) {
+            dot = dots.get(dots.size()-1);
+            %>
 <circle id="point2" r="3" cx="<%= dot.getX() %>" cy="<%= dot.getY() %>" fill="red" stroke="green" visibility="visible"/>
-<% } %>
+            <%
+        }
+    }
+%>
