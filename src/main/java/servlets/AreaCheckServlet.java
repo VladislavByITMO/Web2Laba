@@ -23,25 +23,29 @@ public class AreaCheckServlet extends HttpServlet{
         }
 
         try {
-            if (!(tryToParse(req.getParameter("x")) && (tryToParse(req.getParameter("Xgr"))))) {
-                if (tryToParse(req.getParameter("x"))) {
-                    //Если нажата кнопка
-                    // createErrorPage(resp, "button true");
-                    checkbutton(req, resp);
-                } else if (tryToParse(req.getParameter("Xgr"))) {
-                    //если пришло по нажатию на график
-                    //    createErrorPage(resp, "grafic true");
-                    checkGrafic(req, resp);
-                } else {
-                    createErrorPage(resp, "Please no..._ i can't find Coordinates!, client ERROR");
-                }
 
-            } else {
-                if (tryToParse(req.getParameter("Xgr"))) {
-                    //если пришло по нажатию на график
-                    //    createErrorPage(resp, "grafic true");
-                    checkGrafic(req, resp);
+            if (tryToParse(req.getParameter("Y")) &&
+                    tryToParse(req.getParameter("R"))) {
+
+                if (!(tryToParse(req.getParameter("x")) && (tryToParse(req.getParameter("Xgr"))))) {
+                    if (tryToParse(req.getParameter("x"))) {
+                        //Если нажата кнопка
+                        checkbutton(req, resp);
+                    } else if (tryToParse(req.getParameter("Xgr"))) {
+                        //если пришло по нажатию на график
+                        checkGrafic(req, resp);
+                    } else {
+                        createErrorPage(resp, "Please no..._ I can't find сoord_X, client ERROR");
+                    }
+
+                } else {
+                    if (tryToParse(req.getParameter("Xgr"))) {
+                        //если пришло по нажатию на график
+                        checkGrafic(req, resp);
+                    }
                 }
+            }else {
+                createErrorPage(resp, "I can not find the coordinates necessary for work!, client ERROR");
             }
 
         } catch (Exception e) {
