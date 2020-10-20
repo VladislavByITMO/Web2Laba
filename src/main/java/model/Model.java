@@ -14,7 +14,7 @@ public class Model {
 
 
     public void addDot(Dot dot) {
-        this.dots.add( dot);
+        this.dots.add(dot);
     }
 
 

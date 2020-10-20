@@ -8,7 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -34,7 +33,7 @@ public class AreaCheckServlet extends HttpServlet{
                     //    createErrorPage(resp, "grafic true");
                     checkGrafic(req, resp);
                 } else {
-                    createErrorPage(resp, "Please no...oooh_ i can't find X or Xgr");
+                    createErrorPage(resp, "Please no..._ i can't find Coordinates!, client ERROR");
                 }
 
             } else {

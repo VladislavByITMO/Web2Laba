@@ -48,21 +48,6 @@ public class ControllerServlet extends HttpServlet {
     }
 
 
-    public void createErrorPage(HttpServletResponse resp, String Y, String R) throws IOException {
-        PrintWriter writer = resp.getWriter();
-        String answer = "<html>\n" +
-                "  <head>\n" +
-                "    <meta charset=\"utf-8\" /> " +
-                "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/error.css\">" +
-                "  </head>" +
-                "<body>" +
-                "<div id = \"error\">Error " + Y + " " + R + "</div>" +
-                "<a href = \"http://localhost:1680/WebLab2\">Go back</a>" +
-                "</body></html>";
-        writer.write(answer);
-        writer.close();
-    }
-
 
     private boolean tryToParse(String s) {
         try {
