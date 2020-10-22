@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Model {
 
-    List<Dot> dots;
+    public List<Dot> dots;
 
 
     public List<Dot> getDotsList() {

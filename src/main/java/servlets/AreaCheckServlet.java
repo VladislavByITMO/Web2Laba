@@ -50,6 +50,7 @@ public class AreaCheckServlet extends HttpServlet{
 
         } catch (Exception e) {
 
+            createErrorPage(resp, "Server ERROR");
         }
 
     }
@@ -77,6 +78,7 @@ public class AreaCheckServlet extends HttpServlet{
         } else {
             createErrorPage(resp, "error!");
         }
+
 
         ServletContext servletContext = req.getServletContext();
         servletContext.setAttribute("dots",model);

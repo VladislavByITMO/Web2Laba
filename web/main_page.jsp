@@ -112,9 +112,6 @@
 </script>
 
 <script type="text/javascript">
-    <%@include file="/valid/send_get.js"%>
-</script>
-<script type="text/javascript">
     <%@include file="/valid/click.js"%>
 </script>
 </body>
