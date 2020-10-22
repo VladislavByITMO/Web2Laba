@@ -31,7 +31,6 @@ public class ControllerServlet extends HttpServlet {
             if (tryToParse(req.getParameter("Y")) &&
                     tryToParse(req.getParameter("R"))) {
 
-                // createErrorPage(resp, req.getParameter("Y"), req.getParameter("R"));
                 getServletContext().getRequestDispatcher("/areaCheckServlet").forward(req, resp);
 
             } else {

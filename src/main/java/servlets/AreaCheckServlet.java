@@ -11,14 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class AreaCheckServlet extends HttpServlet{
+public class AreaCheckServlet extends HttpServlet {
 
     public Model model;
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
 
-        this.model = (Model)req.getServletContext().getAttribute("dots");
-        if(model==null){
+        this.model = (Model) req.getServletContext().getAttribute("dots");
+        if (model == null) {
             model = new Model();
         }
 
@@ -44,12 +45,11 @@ public class AreaCheckServlet extends HttpServlet{
                         checkGrafic(req, resp);
                     }
                 }
-            }else {
+            } else {
                 createErrorPage(resp, "I can not find the coordinates necessary for work!, client ERROR");
             }
 
         } catch (Exception e) {
-
             createErrorPage(resp, "Server ERROR");
         }
 
@@ -81,7 +81,7 @@ public class AreaCheckServlet extends HttpServlet{
 
 
         ServletContext servletContext = req.getServletContext();
-        servletContext.setAttribute("dots",model);
+        servletContext.setAttribute("dots", model);
 
 
     }
@@ -101,7 +101,6 @@ public class AreaCheckServlet extends HttpServlet{
 
                 drawTable(resp, x.toString(), y.toString(), r.toString(), res);
 
-                //  drawTable(resp,x.toString(),y.toString(),r.toString(),res);
 
             } else {
                 res = "false";
@@ -115,7 +114,7 @@ public class AreaCheckServlet extends HttpServlet{
         }
 
         ServletContext servletContext = req.getServletContext();
-        servletContext.setAttribute("dots",model);
+        servletContext.setAttribute("dots", model);
 
     }
 
@@ -133,7 +132,7 @@ public class AreaCheckServlet extends HttpServlet{
                 "<div id = \"error3\" style = \"border: 4px double black;  width:200px; \" > R =  " + r + "</div>" +
                 "<div id = \"error3\"style = \"border: 4px double black;  width:200px; \" > Result ->  " + otv + "</div>" +
                 "<a href = \"http://localhost:8080/TestAppL2_war_exploded/\">Go back</a>" +
-              //  "<a href = \"http://localhost:1680/WebLab2\">Go back</a>" +
+                //  "<a href = \"http://localhost:1680/WebLab2\">Go back</a>" +
                 "</body></html>";
         writer.write(answer);
         writer.close();
@@ -149,8 +148,8 @@ public class AreaCheckServlet extends HttpServlet{
                 "  </head>" +
                 "<body>" +
                 "<div id = \"error\">Error " + text + "</div>" +
-             //   "<a href = \"http://localhost:1680/WebLab2\">Go back</a>" +
-               "<a href = \"http://localhost:8080/TestAppL2_war_exploded/\">Go back</a>" +
+                //   "<a href = \"http://localhost:1680/WebLab2\">Go back</a>" +
+                "<a href = \"http://localhost:8080/TestAppL2_war_exploded/\">Go back</a>" +
                 "</body></html>";
         writer.write(answer);
         writer.close();
